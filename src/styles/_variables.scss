@@ -1,0 +1,124 @@
+/*
+* @title Style Variables
+* @desc  Variables for sizing, coloring and spacing conventions, are defined
+*        here.
+*/
+
+/**
+* Size variables for Paddings, Margins and Font Sizes has been defined here. 
+**/
+
+//@screen <768px
+$sz-xxl: 2.4rem;
+$sz-xl: 2rem;
+$sz-l: 1.8rem;
+$sz-m: 1.4rem;
+$sz-s: 1.2rem;
+$sz-xs: 1rem;
+$sz-xxs: 0.8rem;
+
+//@screen >768px
+$sz-xxl-768: 3.2rem;
+$sz-xl-768: 2.4rem;
+$sz-l-768: 2rem;
+$sz-m-768: 1.6rem;
+$sz-s-768: 1.4rem;
+$sz-xs-768: 1.2rem;
+$sz-xxs-768: 1rem;
+
+//@screen >1280px
+$sz-xxl-1280: 4.8rem;
+$sz-xl-1280: 3.2rem;
+$sz-l-1280: 2.4rem;
+$sz-m-1280: 1.8rem;
+$sz-s-1280: 1.6rem;
+$sz-xs-1280: 1.4rem;
+$sz-xxs-1280: 1.2rem;
+
+//@screen >1440px
+$sz-xxl-1440: 5.6rem;
+$sz-xl-1440: 4rem;
+$sz-l-1440: 2.8rem;
+$sz-m-1440: 2rem;
+$sz-s-1440: 1.6rem;
+$sz-xs-1440: 1.4rem;
+$sz-xxs-1440: 1.2rem;
+
+//@screen >1920px
+$sz-xxl-1920: 6.4rem;
+$sz-xl-1920: 4.8rem;
+$sz-l-1920: 3.2rem;
+$sz-m-1920: 2.2rem;
+$sz-s-1920: 1.8rem;
+$sz-xs-1920: 1.4rem;
+$sz-xxs-1920: 1.2rem;
+
+/**
+* COLOR variables for various ui components are defined in this section.
+**/
+
+// Light colors
+$prm-color: #FF6B23; 
+$sec-color: #FFFFFF;
+$prm-bg: #FFCBB2;
+
+// Text Colors
+$head-color: #000000;
+$para-color: #707070;
+
+// States
+$prm-hover: #5405AA;
+$prm-active: #4A0696;
+
+$sec-hover: #180033;
+$sec-active: #14002A;
+
+// Body
+$body-bg: #090211;
+
+// Tag
+$tag-bg: #312B37;
+$tag-success-bg: #0D2423;
+$tag-warning-bg: #312914;
+$tag-error-bg: #2A071D;
+
+
+$tag-text: #ffffff;
+$tag-success-text: #23D381;
+$tag-warning-text: #FFEF25; 
+$tag-error-text: #F33474;
+
+$tag-hover-bg: #2A2330;
+
+$tag-active-bg: #1F1925;
+
+// Skeleton
+$skel-color: #211132; 
+
+// Gradient
+$prm-grad: linear-gradient(45deg,#89CEFD, #2AF1C9);
+
+// Color
+$success: #3AFF96;
+$warning: #FFF13A;
+$error: #FF3A5A;
+
+
+/**
+* FONT variables for various ui components are defined in this section.
+**/
+$font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+/**
+* RADIUS variables for different sizes.
+**/
+
+$rad-m: 0.6rem;
+$rad-l: 0.8rem;
+$rad-xl: 1rem;
+
+/**
+* MAX-WIDTH variables for different sizes.
+**/
+$max-width: 800px;

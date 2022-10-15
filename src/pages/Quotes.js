@@ -29,7 +29,7 @@ const Quotes = () => {
 
   // Returning the component
   return (
-    <div>
+    <main>
         <Helmet>
             <title>{Name}</title>
             <meta name='description' 
@@ -38,7 +38,7 @@ const Quotes = () => {
 
         {/* TODO */}
         <h1>Showing quotes for {Name} ({Symbol})</h1>
-    </div>
+    </main>
   )
 }
 

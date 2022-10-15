@@ -23,7 +23,7 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <main className='home'>
         <Helmet>
             <title>All Stocks</title>
             <meta name='description' 
@@ -31,7 +31,14 @@ const Home = () => {
         </Helmet>
 
         {/* TODO */}
-        <h1>Shows Various stocks</h1>
+        <h1>
+          <img src='/res/icons/sparkles.svg' alt='sparkles'/>
+        Welcome To <span className='prm'>Sense Stocks</span>
+        <img src='/res/icons/sparkles.svg' alt='sparkles'/>
+        </h1>
+
+
+
         <ul>
           {
             stocks.map(
@@ -47,7 +54,7 @@ const Home = () => {
               </li>)
           }
         </ul>
-    </div>
+    </main>
   )
 }
 

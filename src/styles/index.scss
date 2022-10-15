@@ -1,2 +1,6 @@
-@import 'reset';
 @import 'variables';
+@import 'reset';
+@import './typography/typography';
+
+@import './components/components';
+@import './pages/pages';

@@ -7,21 +7,25 @@ import Home from './pages/Home'
 import Quotes from './pages/Quotes'
 import Error404 from './pages/Error404'
 
+import ThemeProvider from './context/ThemeContext'
+
 // App Component
 function App() {
   return (
-    <>
-      <Router>
-        <Navbar/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/:id' element={<Quotes/>}/>
-          
-          {/* Error 404 Route */}
-          <Route path='*' element={<Error404/>}/>
-        </Routes>
-      </Router>
-    </>
+    <ThemeProvider>
+      <>
+        <Router>
+          <Navbar/>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/:id' element={<Quotes/>}/>
+            
+            {/* Error 404 Route */}
+            <Route path='*' element={<Error404/>}/>
+          </Routes>
+        </Router>
+      </>
+    </ThemeProvider>
   );
 }
 

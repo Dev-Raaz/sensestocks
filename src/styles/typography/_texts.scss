@@ -1,0 +1,83 @@
+/**
+* @titl Font Styles
+* @desc Styling the fonts
+**/
+
+// Paragraphs and Links
+p, a {
+    font-size: $sz-m;
+    margin: $sz-s 0;
+    line-height: 1.5;
+    font-family: $font;
+    color: $para-color;
+    text-decoration: none;
+}
+
+// Link States
+a:hover {
+    color: $prm-color;
+    transition: color 200ms linear,
+                opacity 150ms linear;
+}
+
+a:active {
+    opacity: 0.5;
+    transition: opacity 150ms linear;
+}
+
+// Input
+input {
+    font-size: $sz-m;
+    line-height: 1.5;
+    font-family: $font;
+    color: $para-color;
+}
+
+
+// ---------------------------
+// @MEDIA QUERRIES
+// ---------------------------
+
+@media only screen and (min-width: 768px){
+    p, a {
+        font-size: $sz-m-768;
+        margin: $sz-s-768 0;
+    }
+
+    input {
+        font-size: $sz-m-768;
+    }
+}
+
+@media only screen and (min-width: 1280px){
+    p, a {
+        font-size: $sz-m-1280;
+        margin: $sz-s-1280 0;
+    }
+
+    input {
+        font-size: $sz-m-1280;
+    }
+}
+
+@media only screen and (min-width: 1440px){
+    p, a {
+        font-size: $sz-m-1440;
+        margin: $sz-s-1440 0;
+    }
+
+    input {
+        font-size: $sz-m-1440;
+    }
+}
+
+@media only screen and (min-width: 1920px){
+    p, a {
+        font-size: $sz-m-1920;
+        margin: $sz-s-1920 0;
+    }
+
+    input {
+        font-size: $sz-m-1920;
+    }
+}

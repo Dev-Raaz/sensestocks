@@ -1,0 +1,30 @@
+// @Main Container
+main {
+    padding: 0 $sz-m;
+    max-width: 100vw;
+}
+
+
+@media only screen and (min-width: 768px) {
+    main{
+        padding: 0 $sz-xxl-768;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    main{
+        padding: 0 $sz-xxl-1280;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    main{
+        padding: 0 $sz-xxl-1440;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    main{
+        padding: 0 $sz-xxl-1920;
+    }
+}

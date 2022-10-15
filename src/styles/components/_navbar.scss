@@ -1,0 +1,69 @@
+// This file contains the styles for the navbar
+
+//navbar wrapper 
+.nav {
+    display: flex;
+    padding: $sz-m $sz-m;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// Removing margin of links
+.nav a  {
+    margin: 0;
+}
+
+// Logo
+.logo {
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+
+.logo span {
+    font-size: $sz-l;
+    font-weight: bold;
+    color: $prm-color;
+}
+
+// Day night switch
+.day-night-switch {
+    border: 1px solid rgba(112, 112, 112, 0.2);
+}
+
+// --------------------------------------------------------
+// @MEDIA QUERRIES
+// --------------------------------------------------------
+
+@media only screen and (min-width: 768px) {
+    // Navbar wrapper
+    .nav {
+        padding: $sz-m-768 $sz-xxl-768;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    // Navbar wrapper
+    .nav {
+        padding: $sz-m-768 $sz-xxl-1280;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    // Navbar wrapper
+    .nav {
+        padding: $sz-m-768 $sz-xxl-1440;
+    }
+}
+
+@media only screen and (min-width: 1940px) {
+    // Navbar wrapper
+    .nav {
+        padding: $sz-m-768 $sz-xxl-1920;
+    }
+}

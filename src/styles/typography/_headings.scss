@@ -1,0 +1,121 @@
+/**
+* @titl Heading Styles
+* @desc Styles for h1, h2, h3 and label are defined here
+*/
+
+//Heading 1
+h1{
+    font-size: $sz-xxl;
+    margin: $sz-xxl 0 $sz-s;
+}
+
+//Heading 2
+h2{
+    font-size: $sz-xl;
+    margin: $sz-xl 0 $sz-s;
+}
+
+//Heading 3
+h3, label{
+    font-size: $sz-l;
+    margin: $sz-xl 0 $sz-s;
+}
+
+//General Styles
+h1, h2, h3, label{
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: $head-color;
+}
+
+
+
+/**
+* @titl Media Queries
+* @desc Media queries for the headings 
+*/
+
+//@media screen min-width: 768px
+@media screen and (min-width: 768px){
+    //Heading 1
+    h1{
+        font-size: $sz-xxl-768;
+        margin: $sz-xxl-768 0 $sz-s-768;
+    }
+
+    //Heading 2
+    h2{
+        font-size: $sz-xl-768;
+        margin: $sz-xl-768 0 $sz-s-768;
+    }
+
+    //Heading 3
+    h3, label{
+        font-size: $sz-l-768;
+        margin: $sz-xl-768 0 $sz-s-768;
+    }
+}
+
+//@media screen min-width: 1280px
+@media screen and (min-width: 1280px){
+    //Heading 1
+    h1{
+        font-size: $sz-xxl-1280;
+        margin: $sz-xxl-1280 0 $sz-s-1280;
+    }
+
+    //Heading 2
+    h2{
+        font-size: $sz-xl-1280;
+        margin: $sz-xl-1280 0 $sz-s-1280;
+    }
+
+    //Heading 3
+    h3, label{
+        font-size: $sz-l-1280;
+        margin: $sz-xl-1280 0 $sz-s-1280;
+    }
+}
+
+//@media screen min-width: 1440px
+@media screen and (min-width: 1440px){
+    //Heading 1
+    h1{
+        font-size: $sz-xxl-1440;
+        margin: $sz-xxl-1440 0 $sz-s-1440;
+    }
+
+    //Heading 2
+    h2{
+        font-size: $sz-xl-1440;
+        margin: $sz-xl-1440 0 $sz-s-1440;
+    }
+
+    //Heading 3
+    h3, label{
+        font-size: $sz-l-1440;
+        margin: $sz-xl-1440 0 $sz-s-1440;
+    }   
+}
+
+//@media screen min-width: 1920px
+@media screen and (min-width: 1920px){
+    //Heading 1
+    h1{
+        font-size: $sz-xxl-1920;
+        margin: $sz-xxl-1920 0 $sz-s-1920;
+    }
+
+    //Heading 2
+    h2{
+        font-size: $sz-xl-1920;
+        margin: $sz-xl-1920 0 $sz-s-1920;
+    }
+
+    //Heading 3
+    h3, label{
+        font-size: $sz-l-1920;
+        margin: $sz-xl-1920 0 $sz-s-1920;
+    }   
+}
