@@ -24,7 +24,7 @@ const Quotes = () => {
 
   // Loading
   if( loading ) {
-    return <h1>Loading . . .</h1>
+    return <main><h1>Loading . . .</h1></main>
   }
 
   // Returning the component

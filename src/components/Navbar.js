@@ -13,11 +13,9 @@ const Navbar = () => {
 
   return (
     <nav className='nav'>
-        <Link to='/'>
-          <a className='logo'>
-            <img src='/res/icons/logo.svg' alt='Sense Stocks Logo'/>
-            <span>SenseStocks</span>
-          </a>
+        <Link to='/' className='logo'>
+          <img src='/res/icons/logo.svg' alt='Sense Stocks Logo'/>
+          <span>SenseStocks</span>
         </Link>
 
         <ReactSwitch 

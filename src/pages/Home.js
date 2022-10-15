@@ -1,10 +1,13 @@
 // Libraries imports
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 
 // User defined imports
+import Table from '../components/Table'
 import { getStocks } from '../utils/utils'
+import { ThemeContext } from '../context/ThemeContext'
+
 
 
 // Home component
@@ -13,17 +16,20 @@ const Home = () => {
   const [ stocks, setStocks ] = useState(null)
   const [ loading, setLoading ] = useState(true)
 
+  // Hooks Call
+  const { isNight } = useContext(ThemeContext)
+
   useEffect( () => {
     getStocks( setStocks, setLoading )
   }, [])
 
   // Loading . . .
   if( loading ) {
-    return <h1>Loading . . .</h1>
+    return <main><h1>Loading . . .</h1></main>
   }
 
   return (
-    <main className='home'>
+    <main className={'home ' + ( isNight ? 'dark' : '')}>
         <Helmet>
             <title>All Stocks</title>
             <meta name='description' 
@@ -39,7 +45,7 @@ const Home = () => {
 
 
 
-        <ul>
+        {/* <ul>
           {
             stocks.map(
               stock => 
@@ -53,7 +59,9 @@ const Home = () => {
                 <span>{stock.Sector}</span>
               </li>)
           }
-        </ul>
+        </ul> */}
+
+        <Table tableData={stocks}/>
     </main>
   )
 }
