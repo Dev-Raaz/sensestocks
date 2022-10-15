@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 
 // User defined imports
-import Table from '../components/Table'
+import StocksTable from '../components/StocksTable'
 import { getStocks } from '../utils/utils'
 import { ThemeContext } from '../context/ThemeContext'
 
@@ -61,7 +61,7 @@ const Home = () => {
           }
         </ul> */}
 
-        <Table tableData={stocks}/>
+        <StocksTable tableData={stocks}/>
     </main>
   )
 }
