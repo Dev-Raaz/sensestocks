@@ -1,0 +1,1 @@
+export const BASE_URL = "https://prototype.sbulltech.com/api/v2" 
