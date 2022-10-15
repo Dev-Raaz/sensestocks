@@ -1,14 +1,33 @@
-// Libraries Imports
-import React from 'react'
+// Libraries imports
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useLocation } from 'react-router-dom'
 
+// User defined imports
+import { getQuotes } from '../utils/utils'
+
+
+// Quotes component
 const Quotes = () => {
 
+  const [ loading, setLoading ] = useState(true)
+  const [ quotes, setQuotes ] = useState(null)
+
+  // Hooks call
   const location = useLocation()
   const { Name, Symbol } = location.state
-  console.log(location.state)
+  
+  // Use Effect
+  useEffect(()=> {
+    getQuotes(Symbol, setQuotes, setLoading)
+  })
 
+  // Loading
+  if( loading ) {
+    return <h1>Loading . . .</h1>
+  }
+
+  // Returning the component
   return (
     <div>
         <Helmet>

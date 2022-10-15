@@ -1,4 +1,4 @@
-// Libraries Imports
+// Libraries imports
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet'
 import { getStocks } from '../utils/utils'
 
 
-// Home Component
+// Home component
 const Home = () => {
 
   const [ stocks, setStocks ] = useState(null)
@@ -21,7 +21,6 @@ const Home = () => {
   if( loading ) {
     return <h1>Loading . . .</h1>
   }
-
 
   return (
     <div>

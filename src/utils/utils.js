@@ -1,4 +1,4 @@
-// Libraries Imports
+// Libraries imports
 import axios from "axios"
 
 // User defined imports
@@ -20,4 +20,18 @@ const getStocks = async ( setStocks, setLoading ) => {
     }
 }
 
-export { getStocks }
+
+// Function to get quotes for a stock
+const getQuotes = async ( symbol, setQuotes, setLoading ) => {
+    try {
+        const { data } = await axios.get(`${BASE_URL}/quotes/${symbol}`)
+        console.log(data.payload[symbol])
+        // Updating state
+        setLoading(false)
+    } catch (err) {
+        console.log(`Error occured while trying to get quotes for ${symbol}`)
+        console.log(err)
+    }
+}
+
+export { getStocks, getQuotes }
