@@ -1,0 +1,119 @@
+table {
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: $sz-xxl;
+    position: sticky;
+    top: 0;
+    border-radius: 16px;
+}
+
+// @Head
+thead {
+    width: 100%;
+    border-radius: 8px 8px;
+    background-color: $prm-color;
+    color: white;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+
+    box-shadow: 1px 0 4px rgba(35, 64, 255, 0.2);
+}
+
+thead p {
+    color: white;
+}
+
+thead th {
+    text-align: left;
+}
+
+// thead th:first-child {
+//     border-top-left-radius: 8px;
+// }
+
+// thead th:last-child {
+//     border-top-right-radius: 8px;
+// }
+
+// dark
+.dark table {
+    background-color: $dark-card-bg;
+}
+
+table a, p, li {
+    margin: 0;
+}
+
+// cells basic
+table td, table th{
+    padding: $sz-m;
+    transition: background-color 200ms linear;
+}
+// Rows
+tbody {
+    border-left: 1px solid rgba(112, 112, 112, 0.15);
+    border-right: 1px solid rgba(112, 112, 112, 0.15);
+}
+.dark tbody {
+    border: none;
+}
+tbody tr {
+    border-bottom: 1px solid rgba(112, 112, 112, 0.15);
+}
+
+.dark tbody tr {
+    background-color: $dark-card-bg;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+// dark
+tbody tr:hover {
+    transition: background-color 200ms linear;
+    background-color: rgba(112, 112, 112, 0.15);
+}
+
+.dark tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+
+
+// ----------------------------------------------------------
+// @MEDIA QUERRIES
+// ----------------------------------------------------------
+
+@media only screen and (min-width: 768px) {
+    // cells basic
+    table td, th {
+        padding: $sz-m-768;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    // cells basic
+    table td, th {
+        padding: $sz-m-1280;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    // cells basic
+    table td, th {
+        padding: $sz-m-1440;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    // cells basic
+    table td, th {
+        padding: $sz-m-1920;
+    }
+}

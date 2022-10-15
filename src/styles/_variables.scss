@@ -58,7 +58,7 @@ $sz-xxs-1920: 1.2rem;
 **/
 
 // Light colors
-$prm-color: #FF6B23; 
+$prm-color: #2340FF; 
 $sec-color: #FFFFFF;
 $prm-bg: #FFCBB2;
 
@@ -74,23 +74,11 @@ $sec-hover: #180033;
 $sec-active: #14002A;
 
 // Body
-$body-bg: #090211;
+$dark-body-bg: #090211;
 
-// Tag
-$tag-bg: #312B37;
-$tag-success-bg: #0D2423;
-$tag-warning-bg: #312914;
-$tag-error-bg: #2A071D;
-
-
-$tag-text: #ffffff;
-$tag-success-text: #23D381;
-$tag-warning-text: #FFEF25; 
-$tag-error-text: #F33474;
-
-$tag-hover-bg: #2A2330;
-
-$tag-active-bg: #1F1925;
+// card
+$card-bg: white;
+$dark-card-bg: #03061C;
 
 // Skeleton
 $skel-color: #211132; 

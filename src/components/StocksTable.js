@@ -15,45 +15,45 @@ import { COLUMNS } from '../config/tableConfig'
 const StocksTable = ({ tableData }) => {
 
     return (
-        <Table>
+        <table className='stocks-table'>
             {/* Head starts here */}
-            <TableHead sx={{width: '100%'}}>
-                <TableRow>
-                    <TableCell align='center'>
+            <thead sx={{width: '100%'}}>
+                <tr>
+                    <th>
                         <p>Symbol</p>
-                    </TableCell>
-                    <TableCell align='center'>
+                    </th>
+                    <th>
                         <p>Name</p>
-                    </TableCell>
-                    <TableCell align='center'>
+                    </th>
+                    <th>
                         <p>Category</p>
-                    </TableCell>
-                </TableRow>
-            </TableHead>
+                    </th>
+                </tr>
+            </thead>
 
             {/* Body starts here */}
-            <TableBody sx={{width: '100%'}}>
+            <tbody>
                 {
                     tableData.map(row => (
-                        <TableRow key={row.Symbol}>
-                            <TableCell align='center'>
+                        <tr key={row.Symbol}>
+                            <td>
                                 <Link to={`/${row.Symbol}`} state={row}>
                                     {row.Symbol}
                                 </Link>
-                            </TableCell>
+                            </td>
 
-                            <TableCell align='center'>
+                            <td>
                                 <p>{row.Name}</p>
-                            </TableCell>
+                            </td>
 
-                            <TableCell align='center'>
+                            <td>
                                 <p>{row.Sector || "None"}</p>
-                            </TableCell>
-                        </TableRow>
+                            </td>
+                        </tr>
                     ))
                 }
-            </TableBody>
-        </Table>
+            </tbody>
+        </table>
     )
 }
 export default StocksTable

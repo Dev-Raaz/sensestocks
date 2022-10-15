@@ -20,7 +20,7 @@ const Navbar = () => {
 
         <ReactSwitch 
           onChange={setIsNight} checked={isNight}
-          offColor='#F7F7F7' onColor='#332823'
+          offColor='#F7F7F7' onColor='#21232E'
           checkedHandleIcon={<img src='/res/icons/night.svg' alt='Night'/>}
           uncheckedHandleIcon={<img src='/res/icons/day.svg' alt='Day'/>}
           checkedIcon={false}
