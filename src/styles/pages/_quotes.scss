@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: $sz-m;
+    margin-bottom: $sz-xxl;
 }
 
 
@@ -81,6 +82,7 @@
     .quotes-grid {
         grid-template-columns: 1fr 1fr;
         gap: $sz-m-768;
+        margin-bottom: $sz-xxl-768;
     }
 
     // Card
@@ -93,6 +95,7 @@
     .quotes-grid {
         grid-template-columns: 1fr 1fr 1fr;
         gap: $sz-m-1280;
+        margin-bottom: $sz-xxl-1280;
     }
     
     // Card
@@ -104,6 +107,7 @@
 @media only screen and (min-width: 1440px) {
     .quotes-grid {
         gap: $sz-m-1440;
+        margin-bottom: $sz-xxl-1440;
     }
     
     // Card
@@ -115,6 +119,7 @@
 @media only screen and (min-width: 1920px) {
     .quotes-grid {
         gap: $sz-m-1920;
+        margin-bottom: $sz-xxl-1920;
     }
     
     // Card

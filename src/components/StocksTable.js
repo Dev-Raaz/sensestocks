@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 
 const StocksTable = ({ tableData }) => {
 
+    console.log(tableData)
+
     return (
         <div className='table-wrapper'>
             <table className='stocks-table'>
@@ -24,7 +26,8 @@ const StocksTable = ({ tableData }) => {
                 {/* Body starts here */}
                 <tbody>
                     {
-                        tableData.map(row => (
+                        tableData.length !== 0 
+                        ? tableData.map(row => (
                             <tr key={row.Symbol}>
                                 <td>
                                     <Link to={`/${row.Symbol}`} state={row}>
@@ -43,6 +46,13 @@ const StocksTable = ({ tableData }) => {
                                 </td>
                             </tr>
                         ))
+                        :
+                        <tr>
+                            <td>
+                                <p>NO RECORDS FOUND !!</p>
+                            </td>
+                            
+                        </tr>
                     }
                 </tbody>
             </table>

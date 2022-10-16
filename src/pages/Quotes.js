@@ -9,6 +9,8 @@ import { getQuotes, setTimer } from '../utils/utils'
 
 const QuoteCard = ({ price, time, valid_till, index}) => {
 
+  console.log("Re-rendered . . .")
+
   const [ seconds, setSeconds ] = useState(0)
   
   useEffect(() => {
@@ -34,6 +36,7 @@ const QuoteCard = ({ price, time, valid_till, index}) => {
   )
 }
 
+
 // Quotes component
 const Quotes = () => {
 
@@ -44,13 +47,16 @@ const Quotes = () => {
   // Hooks call
   const location = useLocation()
   const { Name, Symbol } = location.state
-  
+
   // Use Effect
   useEffect(()=> {
     getQuotes(Symbol, setQuotes, setLoading)
-    
+  
     }, [Symbol])
+  
+  
 
+  // Sort function
   const sort = (e) => {
     setSortOrder(e.target.value)
   }
@@ -59,20 +65,20 @@ const Quotes = () => {
   if( loading ) {
     return <main><h1>Loading . . .</h1></main>
   }
-
-  // Sorting
-  if(sortOrder === 'asc') {
-    console.log(`Sortin Ascending . . .`)
-    quotes.sort((a, b) => {
-      return new Date(b.time) - new Date(a.time)
-    })
-  } else if (sortOrder === 'dsc') {
-    console.log(`Sorting Descending . . .`)
-    quotes.sort((a, b) => {
-      return new Date(a.time) - new Date(b.time)
-    })
-  }
   
+  // Sorting quotes in ascending order
+  quotes.sort((a,b) => {
+    return (new Date(a.time) - new Date(b.time))
+  })
+
+  let ascList = []
+  quotes.map((quote, index) => 
+    ascList.push(<QuoteCard key={index} {...quote} index={index}/>))
+  
+  let dscList = []
+  for (let i = ascList.length; i >= 0; i--) {
+    dscList.push(ascList[i])
+  }
 
   // Returning the component
   return (
@@ -86,12 +92,7 @@ const Quotes = () => {
         {/* TODO */}
         <h1>Quotes for <span className='prm'>{Name}</span> ({Symbol})</h1>
         <div className='quotes-grid'>
-          {
-            quotes.map(
-              (quote, index)=> (
-                <QuoteCard key={index} {...quote} index={index}/>)
-              )
-          }
+        
           <div className='quote-card sort'>
             <h3>Sort</h3>
             <p>
@@ -109,9 +110,14 @@ const Quotes = () => {
                 onChange={sort}
               />
               <span>Desending</span>
-            </p>
-            
+            </p>  
           </div>
+          
+          {
+            sortOrder === 'asc'
+            ? ascList
+            : dscList
+          }
         </div>
     </main>
   )

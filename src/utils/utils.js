@@ -21,6 +21,23 @@ const getStocks = async ( setStocks, setViewStocks, setLoading ) => {
     }
 }
 
+const reFresh = (quotes) => {
+    const tempQuotes = quotes
+    tempQuotes.sort((a, b) => {
+      return new Date(b.time) - new Date(a.time)
+    })
+
+    const d1 = new Date(tempQuotes[tempQuotes.length - 1].time).getTime()
+    const d2 = new Date(tempQuotes[tempQuotes.length - 1].valid_till).getTime()
+    
+    console.log(d2-d1)
+
+    setTimeout(()=> {
+      console.log("Fetching again")
+      window.location.reload()
+    }, 
+    d2 - d1)
+}
 
 // Function to get quotes for a stock
 const getQuotes = async ( symbol, setQuotes, setLoading) => {
@@ -30,6 +47,7 @@ const getQuotes = async ( symbol, setQuotes, setLoading) => {
         // Updating state
         setLoading(false)
         setQuotes(data.payload[symbol])
+        reFresh(data.payload[symbol])
 
     } catch (err) {
         console.log(`Error occured while trying to get quotes for ${symbol}`)
@@ -38,6 +56,7 @@ const getQuotes = async ( symbol, setQuotes, setLoading) => {
 }
 
 const setTimer = (dateString1, dateString2, setSeconds) => {
+    
     let d1 = new Date(dateString1).getTime()
     let d2 = new Date(dateString2).getTime()
     let time = d2 - d1
@@ -54,4 +73,6 @@ const setTimer = (dateString1, dateString2, setSeconds) => {
         clearInterval(interval)
     }, d2 - d1)
 }
+
+
 export { getStocks, getQuotes, setTimer }
