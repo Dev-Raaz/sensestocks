@@ -40,7 +40,7 @@ const Home = () => {
       }
     }
 
-    if(output != []) {
+    if(output !== []) {
       setViewStocks(output)
     }else {
       setViewStocks(stocks)
