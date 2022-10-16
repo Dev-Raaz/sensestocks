@@ -5,7 +5,7 @@ export const ThemeContext = createContext()
 
 const ThemeProvider = ({ children }) => {
 
-    const [ isNight, setIsNight ] = useState(false)
+    const [ isNight, setIsNight ] = useState(true)
 
     useEffect(()=> {
         const root = document.querySelector('html')
