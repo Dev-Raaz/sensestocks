@@ -28,7 +28,9 @@ const StocksTable = ({ tableData }) => {
                             <tr key={row.Symbol}>
                                 <td>
                                     <Link to={`/${row.Symbol}`} state={row}>
-                                        {row.Symbol}
+                                        <b>
+                                            {row.Symbol}
+                                        </b>
                                     </Link>
                                 </td>
 
