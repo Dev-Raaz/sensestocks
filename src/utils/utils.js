@@ -23,17 +23,35 @@ const getStocks = async ( setStocks, setViewStocks, setLoading ) => {
 
 
 // Function to get quotes for a stock
-const getQuotes = async ( symbol, setQuotes, setLoading ) => {
+const getQuotes = async ( symbol, setQuotes, setLoading) => {
     try {
         const { data } = await axios.get(`${BASE_URL}/quotes/${symbol}`)
         console.log(data.payload[symbol])
         // Updating state
         setLoading(false)
         setQuotes(data.payload[symbol])
+
     } catch (err) {
         console.log(`Error occured while trying to get quotes for ${symbol}`)
         console.log(err)
     }
 }
 
-export { getStocks, getQuotes }
+const setTimer = (dateString1, dateString2, setSeconds) => {
+    let d1 = new Date(dateString1).getTime()
+    let d2 = new Date(dateString2).getTime()
+    let time = d2 - d1
+
+    const interval = setInterval(() => {
+        time = time - 1000
+        const f = Math.floor
+
+        // Setting seconds
+        setSeconds(f((time / 1000 )))
+    }, 1000)
+
+    setTimeout(()=> {
+        clearInterval(interval)
+    }, d2 - d1)
+}
+export { getStocks, getQuotes, setTimer }

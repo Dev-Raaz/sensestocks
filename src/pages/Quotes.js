@@ -2,16 +2,24 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useLocation } from 'react-router-dom'
-import millify from 'millify'
 
 // User defined imports
-import { getQuotes } from '../utils/utils'
+import { getQuotes, setTimer } from '../utils/utils'
 
-const QuoteCard = ({ price, time, valid_till, index }) => {
+
+const QuoteCard = ({ price, time, valid_till, index}) => {
+
+  const [ seconds, setSeconds ] = useState(0)
+  
+  useEffect(() => {
+    
+    setTimer(time, valid_till, setSeconds)
+  }, [time, valid_till, setSeconds])
+
   return (
     <div className='quote-card'>
       <h3>Quote { index + 1 }</h3>
-      <p className='price'>₹&nbsp;{price.toFixed(3)}</p>
+      <p className='price'>₹&nbsp;{price.toFixed(2)}</p>
 
       <p>
         <img src='/res/icons/started.svg' alt='Started'/> 
@@ -20,7 +28,7 @@ const QuoteCard = ({ price, time, valid_till, index }) => {
 
       <p>
         <img src='/res/icons/expires.svg' alt='Ending'/> 
-        <span>Expires In:  &nbsp;{valid_till}</span>
+        <span>Expires in: <span className='prm'>&nbsp;{seconds}s</span></span>
       </p>
     </div>
   )
@@ -31,7 +39,7 @@ const Quotes = () => {
 
   const [ loading, setLoading ] = useState(true)
   const [ quotes, setQuotes ] = useState(null)
-  const [sortOrder, setSortOrder] = useState('asc')
+  const [ sortOrder, setSortOrder ] = useState('asc')
 
   // Hooks call
   const location = useLocation()
@@ -40,7 +48,8 @@ const Quotes = () => {
   // Use Effect
   useEffect(()=> {
     getQuotes(Symbol, setQuotes, setLoading)
-  }, [Symbol])
+    
+    }, [Symbol])
 
   const sort = (e) => {
     setSortOrder(e.target.value)
@@ -63,6 +72,7 @@ const Quotes = () => {
       return new Date(a.time) - new Date(b.time)
     })
   }
+  
 
   // Returning the component
   return (
@@ -78,7 +88,9 @@ const Quotes = () => {
         <div className='quotes-grid'>
           {
             quotes.map(
-              (quote, index)=> (<QuoteCard key={index} {...quote} index={index}/>))
+              (quote, index)=> (
+                <QuoteCard key={index} {...quote} index={index}/>)
+              )
           }
           <div className='quote-card sort'>
             <h3>Sort</h3>
