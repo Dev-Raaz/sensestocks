@@ -28,6 +28,7 @@ const getQuotes = async ( symbol, setQuotes, setLoading ) => {
         console.log(data.payload[symbol])
         // Updating state
         setLoading(false)
+        setQuotes(data.payload[symbol])
     } catch (err) {
         console.log(`Error occured while trying to get quotes for ${symbol}`)
         console.log(err)

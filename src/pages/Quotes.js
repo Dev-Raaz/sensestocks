@@ -20,7 +20,7 @@ const Quotes = () => {
   // Use Effect
   useEffect(()=> {
     getQuotes(Symbol, setQuotes, setLoading)
-  })
+  }, [Symbol])
 
   // Loading
   if( loading ) {
@@ -38,6 +38,9 @@ const Quotes = () => {
 
         {/* TODO */}
         <h1>Showing quotes for {Name} ({Symbol})</h1>
+        {
+          quotes.map(quote=> (<div key={quote.valid_till}>{quote.price}</div>))
+        }
     </main>
   )
 }

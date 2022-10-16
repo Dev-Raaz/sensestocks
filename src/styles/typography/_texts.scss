@@ -13,6 +13,10 @@ p, a {
     text-decoration: none;
 }
 
+.dark p, .dark a {
+    color: $dark-para-color;
+}
+
 // Link States
 a:hover {
     color: $prm-color;

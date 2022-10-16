@@ -7,10 +7,12 @@
 .home h1 {
     text-align: center;
     position: relative;
+    word-wrap: break-word;
 }
 
 .home h1 img {
     position: absolute;
+    display: none;
 }
 
 .home h1 img:nth-child(1) {
@@ -19,4 +21,101 @@
 
 .home h1 img:nth-child(3) {
     transform: translateX(10%) translateY(10%) rotate(180deg);
+}
+
+
+// Search bar
+.search-bar {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    padding: $sz-m $sz-l;
+    align-items: center;
+    border: 1px solid rgba(112,112,112,0.2);
+    max-width: 700px;
+    border-radius: 8px;
+    margin: auto;
+    margin-bottom: $sz-l;
+    background-color: white;
+}
+
+.dark .search-bar {
+    background-color: $dark-body-bg;
+    border: 1px solid rgba(35, 64, 255, 0.2);
+}
+
+// Search icon
+.search-bar svg {
+    margin-right: 8px;
+    fill: $para-color;
+}
+.search-bar svg path {
+    fill: $para-color;
+    transition: fill 200ms linear;
+}
+
+.dark .search-bar svg path {
+    fill: $dark-head-color;
+    transition: fill 200ms linear;
+}
+
+.search-bar input:focus + svg path {
+    fill: $prm-color;
+    transition: fill 200ms linear;
+}
+
+.search-bar input {
+    padding: $sz-m;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+.search-bar.active {
+    border-color: $prm-color;
+}
+
+.dark .search-bar input {
+    color: $dark-para-color;
+}
+
+.search-bar input:focus {
+    outline: none;
+    color: $prm-color;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    
+    .home h1 img {
+        display: inline-block;
+    }
+
+    // Search bar
+    .search-bar {
+        margin-bottom: $sz-l-768;
+    }
+    
+}
+
+@media only screen and (min-width: 1280px) {
+    .search-bar {
+        margin-bottom: $sz-l-1280;
+    }
+    
+}
+
+@media only screen and (min-width: 1440px) {
+    .search-bar {
+        margin-bottom: $sz-l-1920;
+    }
+    
+}
+
+@media only screen and (min-width: 1920px) {
+    .search-bar {
+        margin-bottom: $sz-l-1920;
+    }
+    
 }

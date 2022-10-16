@@ -1,11 +1,13 @@
 table {
     background-color: white;
     width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
     margin-bottom: $sz-xxl;
     position: sticky;
     top: 0;
     border-radius: 16px;
+    overflow-x: scroll;
 }
 
 // @Head
@@ -21,7 +23,7 @@ thead {
     box-shadow: 1px 0 4px rgba(35, 64, 255, 0.2);
 }
 
-thead p {
+table.stocks-table thead p {
     color: white;
 }
 
@@ -29,13 +31,6 @@ thead th {
     text-align: left;
 }
 
-// thead th:first-child {
-//     border-top-left-radius: 8px;
-// }
-
-// thead th:last-child {
-//     border-top-right-radius: 8px;
-// }
 
 // dark
 .dark table {
@@ -48,7 +43,7 @@ table a, p, li {
 
 // cells basic
 table td, table th{
-    padding: $sz-m;
+    padding: $sz-m $sz-l;
     transition: background-color 200ms linear;
 }
 // Rows
@@ -91,29 +86,48 @@ tbody tr:hover {
 // ----------------------------------------------------------
 
 @media only screen and (min-width: 768px) {
+
+    table {
+        margin-bottom: $sz-xxl-768;
+    }
     // cells basic
-    table td, th {
-        padding: $sz-m-768;
+    table td, table th {
+        padding: $sz-m-768 $sz-l-768;
     }
 }
 
 @media only screen and (min-width: 1280px) {
+    
+    table {
+        margin-bottom: $sz-xxl-1280;
+    }
+
     // cells basic
-    table td, th {
-        padding: $sz-m-1280;
+    table td, table th {
+        padding: $sz-m-1280 $sz-l-1280;
     }
 }
 
 @media only screen and (min-width: 1440px) {
+    
+    table {
+        margin-bottom: $sz-xxl-1440;
+    }
+
     // cells basic
-    table td, th {
-        padding: $sz-m-1440;
+    table td, table th {
+        padding: $sz-m-1440 $sz-l-1440;
     }
 }
 
 @media only screen and (min-width: 1920px) {
+
+    
+    table {
+        margin-bottom: $sz-xxl-1920;
+    }
     // cells basic
-    table td, th {
-        padding: $sz-m-1920;
+    table td, table th {
+        padding: $sz-m-1920 $sz-l-1920;
     }
 }

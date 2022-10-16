@@ -9,4 +9,9 @@
 html {
     font-size: 10px;
     font-family: $font;
+    background-color: white;
+}
+
+html.dark {
+    background-color: $dark-body-bg;
 }

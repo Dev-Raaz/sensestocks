@@ -29,6 +29,10 @@ h1, h2, h3, label{
     color: $head-color;
 }
 
+.dark h1, .dark h2, .dark h3, .dark label {
+    color: $dark-head-color;
+}
+
 
 
 /**

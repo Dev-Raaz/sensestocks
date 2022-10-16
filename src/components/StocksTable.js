@@ -1,16 +1,5 @@
 // Library imports
 import { Link } from 'react-router-dom'
-import {
-    TableContainer,
-    Table,
-    TableHead,
-    TableBody,
-    TableCell,
-    TableRow
-} from '@mui/material'
-
-// User defined imports
-import { COLUMNS } from '../config/tableConfig'
 
 const StocksTable = ({ tableData }) => {
 
