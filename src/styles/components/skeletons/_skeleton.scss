@@ -1,0 +1,130 @@
+@import 'shimmer';
+@import 'quotesSkeleton';
+
+
+// @Basic style
+.skeleton {
+    background-color: $skel-color;
+    margin: $sz-s 0;
+    border-radius: 0.4rem;
+}
+
+.dark .skeleton {
+    background-color: $dark-skel-color;
+}
+
+// Text
+.skeleton.text {
+    width: 100%;
+    height: $sz-m;
+}
+
+// Title
+.skeleton.title {
+    width: 50%;
+    height: $sz-l;
+    margin-bottom: 15px;
+}
+
+// Avatar
+.skeleton.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+// Thumbnail
+.skeleton.thumbnail {
+    width: 100%;
+    height: 100px;
+}
+
+// Timestamp
+.skeleton.timestamp {
+    width: 15%;
+    margin-right: $sz-m;
+    background-color: #ddd;
+    display: inline-block;
+}
+
+// Tag
+.skeleton.tag {
+    width: 15%;
+    border: none;
+}
+
+// @MEDIA QUERRIES
+@media only screen and (min-width: 768px) {
+
+    // Base
+    .skeleton {
+        margin: $sz-s-768 0;
+    }
+
+    // Title
+    .skeleton.title {
+        height: $sz-l-768;
+    }
+
+    // Text
+    .skeleton.text {
+        height: $sz-m-768;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+
+    // Base
+    .skeleton {
+        margin: $sz-s-1280 0;
+    }
+
+    // Title
+    .skeleton.title {
+        height: $sz-l-1280;
+    }
+
+    // Text
+    .skeleton.text {
+        height: $sz-m-1280;
+    }
+
+}
+
+@media only screen and (min-width: 1440px) {
+
+    // Base
+    .skeleton {
+        margin: $sz-s-1440 0;
+    }
+
+    // Text
+    .skeleton.text {
+        height: $sz-m-1440;
+    }
+
+    // Title
+    .skeleton.title {
+        height: $sz-l-1440;
+    }
+
+}
+
+@media only screen and (min-width: 1920px) {
+
+    // Base
+    .skeleton {
+        margin: $sz-s-1920 0;
+    }
+
+    // Text
+    .skeleton.text {
+        height: $sz-m-1920;
+    }
+
+    // Title
+    .skeleton.title {
+        height: $sz-l-1920;
+    }
+    
+}

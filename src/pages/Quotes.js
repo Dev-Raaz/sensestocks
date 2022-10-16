@@ -5,11 +5,10 @@ import { useLocation } from 'react-router-dom'
 
 // User defined imports
 import { getQuotes, setTimer } from '../utils/utils'
+import QuotesSkeleton from '../components/skeletons/QuotesSkeleton'
 
 
 const QuoteCard = ({ price, time, valid_till, index}) => {
-
-  console.log("Re-rendered . . .")
 
   const [ seconds, setSeconds ] = useState(0)
   
@@ -63,7 +62,7 @@ const Quotes = () => {
 
   // Loading
   if( loading ) {
-    return <main><h1>Loading . . .</h1></main>
+    return <QuotesSkeleton Symbol={Symbol} Name={Name}/>
   }
   
   // Sorting quotes in ascending order

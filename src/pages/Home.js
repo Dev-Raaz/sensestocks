@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 // User defined imports
 import StocksTable from '../components/StocksTable'
 import { getStocks } from '../utils/utils'
+import { TableSkeleton } from '../components/skeletons/TableSkeleton'
 
 
 
@@ -21,11 +22,6 @@ const Home = () => {
   useEffect( () => {
     getStocks( setStocks, setViewStocks, setLoading )
   }, [])
-
-  // Loading . . .
-  if( loading ) {
-    return <main><h1>Loading . . .</h1></main>
-  }
 
   const fuzzySearch = (e) => {
 
@@ -77,7 +73,11 @@ const Home = () => {
           </svg>
         </div>
 
-        <StocksTable tableData={viewStocks}/>
+        {
+          !loading 
+          ? <StocksTable tableData={viewStocks}/>
+          : <TableSkeleton/>
+        }
     </main>
   )
 }

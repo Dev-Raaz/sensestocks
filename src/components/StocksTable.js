@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const StocksTable = ({ tableData }) => {
 
-    console.log(tableData)
+    
 
     return (
         <div className='table-wrapper'>

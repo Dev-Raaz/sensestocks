@@ -19,6 +19,7 @@ thead {
     position: sticky;
     top: 0;
     overflow: hidden;
+    z-index: 20;
 
     box-shadow: 1px 0 4px rgba(35, 64, 255, 0.2);
 }
