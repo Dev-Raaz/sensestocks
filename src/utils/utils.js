@@ -6,13 +6,14 @@ import { BASE_URL } from "../config"
 import { csv2json } from "csvjson-csv2json"
 
 // Function to get stocks from the sensibull api
-const getStocks = async ( setStocks, setLoading ) => {
+const getStocks = async ( setStocks, setViewStocks, setLoading ) => {
     try {
         const { data } = await axios.get(`${BASE_URL}/instruments`)
         // console.log(csv2json(data, { parseNumber: true }))
         
         // Updating the states
         setStocks(csv2json(data))
+        setViewStocks(csv2json(data))
         setLoading(false)
     } catch(err) {
         console.log('Error occured while getting stock data . . .')

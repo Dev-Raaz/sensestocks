@@ -12,16 +12,39 @@ import { getStocks } from '../utils/utils'
 const Home = () => {
 
   const [ stocks, setStocks ] = useState(null)
+  const [ viewStocks, setViewStocks ] = useState(null)
   const [ loading, setLoading ] = useState(true)
   const [ searchOn, setSearchOn ] = useState(false)
 
+  const [ searchTerm, setSearchTerm ] = useState('')
+
   useEffect( () => {
-    getStocks( setStocks, setLoading )
+    getStocks( setStocks, setViewStocks, setLoading )
   }, [])
 
   // Loading . . .
   if( loading ) {
     return <main><h1>Loading . . .</h1></main>
+  }
+
+  const fuzzySearch = (e) => {
+
+    let output = []
+    const term = e.target.value
+    setSearchTerm(term)
+    
+    for(let i = 0; i < stocks.length; i++) {
+      if(stocks[i].Symbol.toLowerCase().includes(term.toLowerCase()) 
+        || stocks[i].Name.toLowerCase().includes(term.toLowerCase())) {
+        output.push(stocks[i])
+      }
+    }
+
+    if(output != []) {
+      setViewStocks(output)
+    }else {
+      setViewStocks(stocks)
+    }
   }
 
   return (
@@ -44,14 +67,17 @@ const Home = () => {
             onFocus={()=>setSearchOn(true)}
             onBlur={()=>setSearchOn(false)} 
             type='text' 
-            placeholder='Search stocks here . . .'/>
+            placeholder='Search stocks here . . .'
+            onChange={fuzzySearch}
+            value={searchTerm}
+          />
 
           <svg xmlns="http://www.w3.org/2000/svg" width="31.994" height="32" viewBox="0 0 31.994 32">
             <path id="search" d="M26,13a12.966,12.966,0,0,1-2.5,7.668l7.911,7.918a2,2,0,1,1-2.831,2.831L20.666,23.5A13,13,0,1,1,26,13ZM13,22a9,9,0,1,0-9-9A9,9,0,0,0,13,22Z" fill="#2340ff"/>
           </svg>
         </div>
 
-        <StocksTable tableData={stocks}/>
+        <StocksTable tableData={viewStocks}/>
     </main>
   )
 }
