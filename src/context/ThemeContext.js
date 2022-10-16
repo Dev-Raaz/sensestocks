@@ -10,9 +10,9 @@ const ThemeProvider = ({ children }) => {
     useEffect(()=> {
         const root = document.querySelector('html')
         if(isNight) {
-            root.classList.toggle('dark')
+            root.classList.add('dark')
         }else {
-            root.classList.toggle('dark')
+            root.classList.remove('dark')
         }
     }, [isNight])
 

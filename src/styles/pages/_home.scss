@@ -1,5 +1,5 @@
 // Here are the specific styles for the home component
-.home .prm {
+main .prm {
     color: $prm-color;
 }
 
@@ -41,7 +41,11 @@
 
 .dark .search-bar {
     background-color: $dark-body-bg;
-    border: 1px solid rgba(35, 64, 255, 0.2);
+    border: 1px solid $dark-para-color;
+}
+
+.dark .search-bar input {
+    color: $dark-para-color;
 }
 
 // Search icon
@@ -75,7 +79,11 @@
     border-color: $prm-color;
 }
 
-.dark .search-bar input {
+.search-bar input::placeholder {
+    color: $para-color;
+}
+
+.dark .search-bar input::placeholder {
     color: $dark-para-color;
 }
 

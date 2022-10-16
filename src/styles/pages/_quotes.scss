@@ -1,0 +1,124 @@
+.quotes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $sz-m;
+}
+
+
+// Quotes card
+.quote-card {
+    padding: $sz-m;
+    background-color: white;
+    border: 1px solid #DFDFDF;
+    border-radius: 8px;
+}
+
+.dark .quote-card {
+    background-color: $dark-card-bg;
+    border: none;
+}
+
+// Price
+.quote-card h3 {
+    margin-top: 0;
+}
+
+.quote-card .price {
+    color: $success;
+}
+
+.quote-card p {
+    display: flex;
+    align-items: center;
+}
+
+.quote-card p img {
+    margin-right: 1.2rem;
+}
+
+// Sort
+.quote-card input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    margin: 0;
+    margin-right: 10px;
+    font: inherit;
+    color: currentColor;
+    width: 24px;
+    height: 24px;
+    border: 1px solid $prm-color;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// checked
+.quote-card input[type="radio"]::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 200ms ease-in-out;
+    box-shadow: inset 1rem 1rem $prm-color;
+}
+
+.quote-card input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+.quote-card.sort h3 {
+    color: $prm-color;
+}
+
+// ---------------------------------------------------------
+// @MEDIA QUERRIES
+// ---------------------------------------------------------
+@media only screen and (min-width: 768px) {
+    // Grid
+    .quotes-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: $sz-m-768;
+    }
+
+    // Card
+    .quote-card {
+        padding: $sz-m-768;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .quotes-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: $sz-m-1280;
+    }
+    
+    // Card
+    .quote-card {
+        padding: $sz-m-1280;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .quotes-grid {
+        gap: $sz-m-1440;
+    }
+    
+    // Card
+    .quote-card {
+        padding: $sz-m-1440;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .quotes-grid {
+        gap: $sz-m-1920;
+    }
+    
+    // Card
+    .quote-card {
+        padding: $sz-m-1920;
+    }
+}

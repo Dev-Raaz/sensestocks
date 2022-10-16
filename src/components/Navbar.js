@@ -11,6 +11,7 @@ const Navbar = () => {
 
   const { isNight, setIsNight } = useContext( ThemeContext )
 
+  console.log(isNight)
   return (
     <nav className='nav'>
         <Link to='/' className='logo'>
